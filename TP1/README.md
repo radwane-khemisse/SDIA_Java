@@ -16,4 +16,4 @@ This TP contains the following exercises:
 - Compile and execute each exercise separately to explore its functionality.
 - Check the source code files for more detailed implementations.
 
-For additional details, refer to the source code within the repository or you can check the full report of the assignment .
+For additional details, refer to the source code within the repository or you can check the [full report](https://github.com/radwane-khemisse/SDIA_Java/blob/main/TP1/Compte%20rendu%20TP1%20java.pdf) of the assignment .
