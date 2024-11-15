@@ -1,4 +1,6 @@
 # Java Streams Practical Activity
+**Author:** Radwane Khemisse  
+**Date:** November 2024
 
 ## Introduction
 
