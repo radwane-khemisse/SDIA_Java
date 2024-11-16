@@ -62,6 +62,8 @@ Transforms each word to include its index in the format "Name - Index".
                 .mapToObj(i -> words.get(i) + " - " + i)
                 .collect(Collectors.toList());
 
+**Output Example:**
+![Exercise 1 Screenshot](images/screenshot1.png)
 ### Exercice 2 : Employee List Operations
 Create a list of employees, each with a name, department, and salary, then perform these operations:
 
@@ -110,6 +112,8 @@ Filters employees whose salary is above a value provided by the user.
                 .map(e -> e.nom)
                 .reduce("", (nom1, nom2) -> nom1 + " " + nom2).trim();
 
+**Output Example:**
+![Exercise 2 Screenshot](images/screenshot2.png)
 # Conclusion
 This practical activity demonstrates the versatility and power of Java Streams for functional programming in data manipulation. Through these exercises, we gained proficiency in filtering, transforming, and aggregating data in Java, strengthening our understanding of Streams and functional operations in a real-world context.
 
