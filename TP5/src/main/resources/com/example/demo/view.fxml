@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Controller">
+   <children>
+      <!-- Left Panel for Buttons -->
+      <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="600.0" prefWidth="170.0" style="-fx-background-color: #202020;">
+         <children>
+            <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 16;" text="Gestion de l'école" textFill="#fbcc06" />
+            <Button fx:id="ButtonGestionProf" layoutX="13.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Gestion des Professeurs" onAction="#handleGestionProfesseurs" />
+            <Button fx:id="ButtonGestionDepart" layoutX="13.0" layoutY="120.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Gestion des Départements" onAction="#handleGestionDepartements" />
+         </children>
+      </AnchorPane>
+
+      <!-- Right Panel for TableView, Form, and Action Buttons -->
+      <AnchorPane layoutX="170.0" layoutY="0.0" prefHeight="600.0" prefWidth="630.0">
+         <children>
+            <!-- Panel for Professors (Initially visible) -->
+            <AnchorPane fx:id="panelProfesseurs" visible="true">
+               <!-- Table for Professors -->
+               <TableView fx:id="tableViewProf" layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="600.0">
+                  <columns>
+                     <TableColumn fx:id="colProfId" text="ID" />
+                     <TableColumn fx:id="colProfNom" text="Nom" />
+                     <TableColumn fx:id="colProfPrenom" text="Prenom" />
+                     <TableColumn fx:id="colProfCin" text="CIN" />
+                     <TableColumn fx:id="colProfAdresse" text="Adresse" />
+                     <TableColumn fx:id="colProfTelephone" text="Telephone" />
+                     <TableColumn fx:id="colProfEmail" text="Email" />
+                     <TableColumn fx:id="colProfDateRecrutement" text="Date Recrutement" />
+                     <TableColumn fx:id="colProfIdDepart" text="Nom de Département" />
+                     <TableColumn fx:id="colProfActions" text="Actions" />
+                  </columns>
+               </TableView>
+
+               <!-- Form for Adding/Editing Professor -->
+               <Label layoutX="10.0" layoutY="230.0" text="Nom:" />
+               <TextField fx:id="txtNom" layoutX="150.0" layoutY="230.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="260.0" text="Prénom:" />
+               <TextField fx:id="txtPrenom" layoutX="150.0" layoutY="260.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="290.0" text="CIN:" />
+               <TextField fx:id="txtCin" layoutX="150.0" layoutY="290.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="320.0" text="Adresse:" />
+               <TextField fx:id="txtAdresse" layoutX="150.0" layoutY="320.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="350.0" text="Téléphone:" />
+               <TextField fx:id="txtTelephone" layoutX="150.0" layoutY="350.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="380.0" text="Email:" />
+               <TextField fx:id="txtEmail" layoutX="150.0" layoutY="380.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="410.0" text="Date de recrutement:" />
+               <DatePicker fx:id="dateRecrutement" layoutX="150.0" layoutY="410.0" prefWidth="200.0" />
+               <Label layoutX="10.0" layoutY="440.0" text="Département ID:" />
+               <TextField fx:id="txtIdDepart" layoutX="150.0" layoutY="440.0" prefWidth="200.0" />
+               <Button fx:id="btnAdd" layoutX="10.0" layoutY="470.0" mnemonicParsing="false" onAction="#ajouterProfesseur" prefWidth="90.0" text="Add" />
+
+               <!-- Search Bar -->
+               <TextField fx:id="searchField" layoutX="310.0" layoutY="470.0" prefWidth="200.0" promptText="Search..." />
+               <Button fx:id="btnSearch" layoutX="520.0" layoutY="470.0" mnemonicParsing="false" prefWidth="90.0" text="Search" />
+            </AnchorPane>
+
+            <!-- Panel for Departments (Initially hidden) -->
+            <AnchorPane fx:id="panelDepartements" visible="false">
+               <!-- Table for Departments -->
+               <TableView fx:id="tableViewDepart" layoutX="10.0" layoutY="14.0" prefHeight="200.0" prefWidth="600.0">
+                  <columns>
+                     <TableColumn fx:id="colDepartId" text="ID" />
+                     <TableColumn fx:id="colDepartNom" text="Nom" />
+                     <TableColumn fx:id="colDepartActions" text="Actions" prefWidth="100.0"/>
+                  </columns>
+               </TableView>
+
+               <!-- Form for Adding/Editing Department -->
+               <Label layoutX="10.0" layoutY="230.0" text="Nom Département:" />
+               <TextField fx:id="txtNomDepart" layoutX="150.0" layoutY="230.0" prefWidth="200.0" />
+               <Button fx:id="btnAddDepart" layoutX="10.0" layoutY="300.0" mnemonicParsing="false" onAction="#ajouterDepartement" prefWidth="90.0" text="Add" />
+               <!-- Search Bar -->
+               <TextField fx:id="searchFieldDepart" layoutX="310.0" layoutY="300.0" prefWidth="200.0" promptText="Search..." />
+               <Button fx:id="btnSearchDepart" layoutX="520.0" layoutY="300.0" mnemonicParsing="false" prefWidth="90.0" text="Search" />
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
